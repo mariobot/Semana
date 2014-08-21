@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceSemana", "ServiceSemana\ServiceSemana.csproj", "{4AE2F4E0-163D-49EC-B63F-6B0F43234701}"
+EndProject
+Global
+	GlobalSection(CodealikeProperties) = postSolution
+		SolutionGuid = 698f729a-1bb4-49e2-a8f9-da47110b46d7
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4AE2F4E0-163D-49EC-B63F-6B0F43234701}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AE2F4E0-163D-49EC-B63F-6B0F43234701}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AE2F4E0-163D-49EC-B63F-6B0F43234701}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AE2F4E0-163D-49EC-B63F-6B0F43234701}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

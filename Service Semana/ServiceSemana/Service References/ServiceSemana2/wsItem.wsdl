@@ -1,0 +1,1072 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="findItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="findItemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getItems">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="asc" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="idTipoItem" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idSeccion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="calculadora" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getItemsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getItemsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getItemsSecciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="asc" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="idTipoItem" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="idSecciones" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getItemsSeccionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getItemsSeccionesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getItemsByEdicion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idEdicion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getItemsByEdicionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getItemsByEdicionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getItemsBySeccion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="what" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idSeccion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="bImpresa" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bOnLine" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getItemsBySeccionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getItemsBySeccionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getItemsByEdicionActualSeccion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idSeccion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getItemsByEdicionActualSeccionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getItemsByEdicionActualSeccionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getItemsBySeccionRecursiva">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="what" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idSeccion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getItemsBySeccionRecursivaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getItemsBySeccionRecursivaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTerminos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTerminosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTerminosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPreguntas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idSeccion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPreguntasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPreguntasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPregunta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idItem" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPreguntaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPreguntaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addPregunta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idSeccion" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="autor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addPreguntaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addPreguntaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getNextMultimedia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idItem" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getNextMultimediaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getNextMultimediaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idsItem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idTipoImagen" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getImageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGaleria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idItem" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idTipoImagen" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGaleriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getGaleriaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGalery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idItem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGaleryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getGaleryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getFotosHome">
+        <s:complexType />
+      </s:element>
+      <s:element name="getFotosHomeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getFotosHomeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addVote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idEncuesta" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idRespuesta" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addVoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addVoteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMultimediasByAdvancedSearching">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="asc" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="idtipoMultimedia" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMultimediasByAdvancedSearchingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMultimediasByAdvancedSearchingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMultimedias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pageNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMultimediasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMultimediasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGalerias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pageNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGaleriasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getGaleriasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHorocopos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idTipo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHorocoposResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getHorocoposResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getVersus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idItem" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getVersusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getVersusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findItemsByAuthor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idAuthor" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findItemsByAuthorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="findItemsByAuthorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="lstCrucigramas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="lstCrucigramasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lstCrucigramasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="findItemSoapIn">
+    <wsdl:part name="parameters" element="tns:findItem" />
+  </wsdl:message>
+  <wsdl:message name="findItemSoapOut">
+    <wsdl:part name="parameters" element="tns:findItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="getItemsSoapIn">
+    <wsdl:part name="parameters" element="tns:getItems" />
+  </wsdl:message>
+  <wsdl:message name="getItemsSoapOut">
+    <wsdl:part name="parameters" element="tns:getItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getItemsSeccionesSoapIn">
+    <wsdl:part name="parameters" element="tns:getItemsSecciones" />
+  </wsdl:message>
+  <wsdl:message name="getItemsSeccionesSoapOut">
+    <wsdl:part name="parameters" element="tns:getItemsSeccionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getItemsByEdicionSoapIn">
+    <wsdl:part name="parameters" element="tns:getItemsByEdicion" />
+  </wsdl:message>
+  <wsdl:message name="getItemsByEdicionSoapOut">
+    <wsdl:part name="parameters" element="tns:getItemsByEdicionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getItemsBySeccionSoapIn">
+    <wsdl:part name="parameters" element="tns:getItemsBySeccion" />
+  </wsdl:message>
+  <wsdl:message name="getItemsBySeccionSoapOut">
+    <wsdl:part name="parameters" element="tns:getItemsBySeccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getItemsByEdicionActualSeccionSoapIn">
+    <wsdl:part name="parameters" element="tns:getItemsByEdicionActualSeccion" />
+  </wsdl:message>
+  <wsdl:message name="getItemsByEdicionActualSeccionSoapOut">
+    <wsdl:part name="parameters" element="tns:getItemsByEdicionActualSeccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getItemsBySeccionRecursivaSoapIn">
+    <wsdl:part name="parameters" element="tns:getItemsBySeccionRecursiva" />
+  </wsdl:message>
+  <wsdl:message name="getItemsBySeccionRecursivaSoapOut">
+    <wsdl:part name="parameters" element="tns:getItemsBySeccionRecursivaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTerminosSoapIn">
+    <wsdl:part name="parameters" element="tns:getTerminos" />
+  </wsdl:message>
+  <wsdl:message name="getTerminosSoapOut">
+    <wsdl:part name="parameters" element="tns:getTerminosResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPreguntasSoapIn">
+    <wsdl:part name="parameters" element="tns:getPreguntas" />
+  </wsdl:message>
+  <wsdl:message name="getPreguntasSoapOut">
+    <wsdl:part name="parameters" element="tns:getPreguntasResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPreguntaSoapIn">
+    <wsdl:part name="parameters" element="tns:getPregunta" />
+  </wsdl:message>
+  <wsdl:message name="getPreguntaSoapOut">
+    <wsdl:part name="parameters" element="tns:getPreguntaResponse" />
+  </wsdl:message>
+  <wsdl:message name="addPreguntaSoapIn">
+    <wsdl:part name="parameters" element="tns:addPregunta" />
+  </wsdl:message>
+  <wsdl:message name="addPreguntaSoapOut">
+    <wsdl:part name="parameters" element="tns:addPreguntaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getNextMultimediaSoapIn">
+    <wsdl:part name="parameters" element="tns:getNextMultimedia" />
+  </wsdl:message>
+  <wsdl:message name="getNextMultimediaSoapOut">
+    <wsdl:part name="parameters" element="tns:getNextMultimediaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getImageSoapIn">
+    <wsdl:part name="parameters" element="tns:getImage" />
+  </wsdl:message>
+  <wsdl:message name="getImageSoapOut">
+    <wsdl:part name="parameters" element="tns:getImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="getGaleriaSoapIn">
+    <wsdl:part name="parameters" element="tns:getGaleria" />
+  </wsdl:message>
+  <wsdl:message name="getGaleriaSoapOut">
+    <wsdl:part name="parameters" element="tns:getGaleriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getGalerySoapIn">
+    <wsdl:part name="parameters" element="tns:getGalery" />
+  </wsdl:message>
+  <wsdl:message name="getGalerySoapOut">
+    <wsdl:part name="parameters" element="tns:getGaleryResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFotosHomeSoapIn">
+    <wsdl:part name="parameters" element="tns:getFotosHome" />
+  </wsdl:message>
+  <wsdl:message name="getFotosHomeSoapOut">
+    <wsdl:part name="parameters" element="tns:getFotosHomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="addVoteSoapIn">
+    <wsdl:part name="parameters" element="tns:addVote" />
+  </wsdl:message>
+  <wsdl:message name="addVoteSoapOut">
+    <wsdl:part name="parameters" element="tns:addVoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMultimediasByAdvancedSearchingSoapIn">
+    <wsdl:part name="parameters" element="tns:getMultimediasByAdvancedSearching" />
+  </wsdl:message>
+  <wsdl:message name="getMultimediasByAdvancedSearchingSoapOut">
+    <wsdl:part name="parameters" element="tns:getMultimediasByAdvancedSearchingResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMultimediasSoapIn">
+    <wsdl:part name="parameters" element="tns:getMultimedias" />
+  </wsdl:message>
+  <wsdl:message name="getMultimediasSoapOut">
+    <wsdl:part name="parameters" element="tns:getMultimediasResponse" />
+  </wsdl:message>
+  <wsdl:message name="getGaleriasSoapIn">
+    <wsdl:part name="parameters" element="tns:getGalerias" />
+  </wsdl:message>
+  <wsdl:message name="getGaleriasSoapOut">
+    <wsdl:part name="parameters" element="tns:getGaleriasResponse" />
+  </wsdl:message>
+  <wsdl:message name="getHorocoposSoapIn">
+    <wsdl:part name="parameters" element="tns:getHorocopos" />
+  </wsdl:message>
+  <wsdl:message name="getHorocoposSoapOut">
+    <wsdl:part name="parameters" element="tns:getHorocoposResponse" />
+  </wsdl:message>
+  <wsdl:message name="getVersusSoapIn">
+    <wsdl:part name="parameters" element="tns:getVersus" />
+  </wsdl:message>
+  <wsdl:message name="getVersusSoapOut">
+    <wsdl:part name="parameters" element="tns:getVersusResponse" />
+  </wsdl:message>
+  <wsdl:message name="findItemsByAuthorSoapIn">
+    <wsdl:part name="parameters" element="tns:findItemsByAuthor" />
+  </wsdl:message>
+  <wsdl:message name="findItemsByAuthorSoapOut">
+    <wsdl:part name="parameters" element="tns:findItemsByAuthorResponse" />
+  </wsdl:message>
+  <wsdl:message name="lstCrucigramasSoapIn">
+    <wsdl:part name="parameters" element="tns:lstCrucigramas" />
+  </wsdl:message>
+  <wsdl:message name="lstCrucigramasSoapOut">
+    <wsdl:part name="parameters" element="tns:lstCrucigramasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsItemSoap">
+    <wsdl:operation name="findItem">
+      <wsdl:input message="tns:findItemSoapIn" />
+      <wsdl:output message="tns:findItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getItems">
+      <wsdl:input message="tns:getItemsSoapIn" />
+      <wsdl:output message="tns:getItemsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getItemsSecciones">
+      <wsdl:input message="tns:getItemsSeccionesSoapIn" />
+      <wsdl:output message="tns:getItemsSeccionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getItemsByEdicion">
+      <wsdl:input message="tns:getItemsByEdicionSoapIn" />
+      <wsdl:output message="tns:getItemsByEdicionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getItemsBySeccion">
+      <wsdl:input message="tns:getItemsBySeccionSoapIn" />
+      <wsdl:output message="tns:getItemsBySeccionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getItemsByEdicionActualSeccion">
+      <wsdl:input message="tns:getItemsByEdicionActualSeccionSoapIn" />
+      <wsdl:output message="tns:getItemsByEdicionActualSeccionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getItemsBySeccionRecursiva">
+      <wsdl:input message="tns:getItemsBySeccionRecursivaSoapIn" />
+      <wsdl:output message="tns:getItemsBySeccionRecursivaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTerminos">
+      <wsdl:input message="tns:getTerminosSoapIn" />
+      <wsdl:output message="tns:getTerminosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPreguntas">
+      <wsdl:input message="tns:getPreguntasSoapIn" />
+      <wsdl:output message="tns:getPreguntasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPregunta">
+      <wsdl:input message="tns:getPreguntaSoapIn" />
+      <wsdl:output message="tns:getPreguntaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addPregunta">
+      <wsdl:input message="tns:addPreguntaSoapIn" />
+      <wsdl:output message="tns:addPreguntaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getNextMultimedia">
+      <wsdl:input message="tns:getNextMultimediaSoapIn" />
+      <wsdl:output message="tns:getNextMultimediaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getImage">
+      <wsdl:input message="tns:getImageSoapIn" />
+      <wsdl:output message="tns:getImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGaleria">
+      <wsdl:input message="tns:getGaleriaSoapIn" />
+      <wsdl:output message="tns:getGaleriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGalery">
+      <wsdl:input message="tns:getGalerySoapIn" />
+      <wsdl:output message="tns:getGalerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getFotosHome">
+      <wsdl:input message="tns:getFotosHomeSoapIn" />
+      <wsdl:output message="tns:getFotosHomeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addVote">
+      <wsdl:input message="tns:addVoteSoapIn" />
+      <wsdl:output message="tns:addVoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMultimediasByAdvancedSearching">
+      <wsdl:input message="tns:getMultimediasByAdvancedSearchingSoapIn" />
+      <wsdl:output message="tns:getMultimediasByAdvancedSearchingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMultimedias">
+      <wsdl:input message="tns:getMultimediasSoapIn" />
+      <wsdl:output message="tns:getMultimediasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGalerias">
+      <wsdl:input message="tns:getGaleriasSoapIn" />
+      <wsdl:output message="tns:getGaleriasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getHorocopos">
+      <wsdl:input message="tns:getHorocoposSoapIn" />
+      <wsdl:output message="tns:getHorocoposSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getVersus">
+      <wsdl:input message="tns:getVersusSoapIn" />
+      <wsdl:output message="tns:getVersusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="findItemsByAuthor">
+      <wsdl:input message="tns:findItemsByAuthorSoapIn" />
+      <wsdl:output message="tns:findItemsByAuthorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="lstCrucigramas">
+      <wsdl:input message="tns:lstCrucigramasSoapIn" />
+      <wsdl:output message="tns:lstCrucigramasSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsItemSoap" type="tns:wsItemSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="findItem">
+      <soap:operation soapAction="http://tempuri.org/findItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItems">
+      <soap:operation soapAction="http://tempuri.org/getItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItemsSecciones">
+      <soap:operation soapAction="http://tempuri.org/getItemsSecciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItemsByEdicion">
+      <soap:operation soapAction="http://tempuri.org/getItemsByEdicion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItemsBySeccion">
+      <soap:operation soapAction="http://tempuri.org/getItemsBySeccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItemsByEdicionActualSeccion">
+      <soap:operation soapAction="http://tempuri.org/getItemsByEdicionActualSeccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItemsBySeccionRecursiva">
+      <soap:operation soapAction="http://tempuri.org/getItemsBySeccionRecursiva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTerminos">
+      <soap:operation soapAction="http://tempuri.org/getTerminos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPreguntas">
+      <soap:operation soapAction="http://tempuri.org/getPreguntas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPregunta">
+      <soap:operation soapAction="http://tempuri.org/getPregunta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPregunta">
+      <soap:operation soapAction="http://tempuri.org/addPregunta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNextMultimedia">
+      <soap:operation soapAction="http://tempuri.org/getNextMultimedia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getImage">
+      <soap:operation soapAction="http://tempuri.org/getImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGaleria">
+      <soap:operation soapAction="http://tempuri.org/getGaleria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGalery">
+      <soap:operation soapAction="http://tempuri.org/getGalery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFotosHome">
+      <soap:operation soapAction="http://tempuri.org/getFotosHome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addVote">
+      <soap:operation soapAction="http://tempuri.org/addVote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMultimediasByAdvancedSearching">
+      <soap:operation soapAction="http://tempuri.org/getMultimediasByAdvancedSearching" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMultimedias">
+      <soap:operation soapAction="http://tempuri.org/getMultimedias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGalerias">
+      <soap:operation soapAction="http://tempuri.org/getGalerias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHorocopos">
+      <soap:operation soapAction="http://tempuri.org/getHorocopos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVersus">
+      <soap:operation soapAction="http://tempuri.org/getVersus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findItemsByAuthor">
+      <soap:operation soapAction="http://tempuri.org/findItemsByAuthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lstCrucigramas">
+      <soap:operation soapAction="http://tempuri.org/lstCrucigramas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsItemSoap12" type="tns:wsItemSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="findItem">
+      <soap12:operation soapAction="http://tempuri.org/findItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItems">
+      <soap12:operation soapAction="http://tempuri.org/getItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItemsSecciones">
+      <soap12:operation soapAction="http://tempuri.org/getItemsSecciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItemsByEdicion">
+      <soap12:operation soapAction="http://tempuri.org/getItemsByEdicion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItemsBySeccion">
+      <soap12:operation soapAction="http://tempuri.org/getItemsBySeccion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItemsByEdicionActualSeccion">
+      <soap12:operation soapAction="http://tempuri.org/getItemsByEdicionActualSeccion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItemsBySeccionRecursiva">
+      <soap12:operation soapAction="http://tempuri.org/getItemsBySeccionRecursiva" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTerminos">
+      <soap12:operation soapAction="http://tempuri.org/getTerminos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPreguntas">
+      <soap12:operation soapAction="http://tempuri.org/getPreguntas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPregunta">
+      <soap12:operation soapAction="http://tempuri.org/getPregunta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPregunta">
+      <soap12:operation soapAction="http://tempuri.org/addPregunta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNextMultimedia">
+      <soap12:operation soapAction="http://tempuri.org/getNextMultimedia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getImage">
+      <soap12:operation soapAction="http://tempuri.org/getImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGaleria">
+      <soap12:operation soapAction="http://tempuri.org/getGaleria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGalery">
+      <soap12:operation soapAction="http://tempuri.org/getGalery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFotosHome">
+      <soap12:operation soapAction="http://tempuri.org/getFotosHome" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addVote">
+      <soap12:operation soapAction="http://tempuri.org/addVote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMultimediasByAdvancedSearching">
+      <soap12:operation soapAction="http://tempuri.org/getMultimediasByAdvancedSearching" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMultimedias">
+      <soap12:operation soapAction="http://tempuri.org/getMultimedias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGalerias">
+      <soap12:operation soapAction="http://tempuri.org/getGalerias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHorocopos">
+      <soap12:operation soapAction="http://tempuri.org/getHorocopos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVersus">
+      <soap12:operation soapAction="http://tempuri.org/getVersus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findItemsByAuthor">
+      <soap12:operation soapAction="http://tempuri.org/findItemsByAuthor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lstCrucigramas">
+      <soap12:operation soapAction="http://tempuri.org/lstCrucigramas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsItem">
+    <wsdl:port name="wsItemSoap" binding="tns:wsItemSoap">
+      <soap:address location="http://www.semana.com/ws/wsItem.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsItemSoap12" binding="tns:wsItemSoap12">
+      <soap12:address location="http://www.semana.com/ws/wsItem.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

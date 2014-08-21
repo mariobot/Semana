@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="lst_MultimediasByParameter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pageNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="filterFind" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idSeccion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idTipoMultimedia" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="lst_MultimediasByParameterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lst_MultimediasByParameterResult" type="tns:ArrayOfMultimedia" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMultimedia">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Multimedia" nillable="true" type="tns:Multimedia" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Multimedia">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralProcess">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IdMultimedia" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaCreacion" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Usuarios_IdUsuario" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaUltimaModificacion" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SeccionesMultimedia_IdSeccion" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="TiposMultimedia_IdTipo" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="TiposContenidoMultimedia_IdTipo" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="PublicarSitioWeb" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaPublicacion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaArchivo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FuenteResAlta" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FuenteResMedia" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FuenteResBaja" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FuenteRes" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Resolucion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FormatoDescarga" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="EstadosPublicacion_IdEstado" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="Ancho" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="Alto" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="Classid" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Codebase" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImagenListado" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImagenGrande" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AkamaiResAlta" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AkamaiResMedia" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AkamaiResBaja" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Titulo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Meta_Keywords" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Meta_Description" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CodYoutubeNormal" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CodYoutubeEmbed" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UrlFriendly" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImagenPequenia" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="OrdenHome" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="Alianzas_IdAlianza" type="s:long" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="GeneralProcess" />
+      <s:element name="lst_GaleriaFindParameterPageIndex">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pageNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="filterFind" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idSeccion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="lst_GaleriaFindParameterPageIndexResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lst_GaleriaFindParameterPageIndexResult" type="tns:ArrayOfGaleriaFotografica" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGaleriaFotografica">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GaleriaFotografica" nillable="true" type="tns:GaleriaFotografica" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GaleriaFotografica">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralProcess">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IdGaleria" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Titulo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaCreacion" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Usuarios_IdUsuario" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaUltimaModificacion" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SeccionesGaleria_IdSeccion" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="Imagen" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Imagen_Pequeña" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UrlFriendly" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="OrdenHome" type="s:long" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="lst_GaleriaFindPhotos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idGaleria" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="lst_GaleriaFindPhotosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lst_GaleriaFindPhotosResult" type="tns:ArrayOfFotos_Galeria" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFotos_Galeria">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Fotos_Galeria" nillable="true" type="tns:Fotos_Galeria" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Fotos_Galeria">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralProcess">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IdFoto" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="GaleriasFotograficas_IdGaleria" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="FotoGrande" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FotoPequeña" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PiedeFoto" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Autor" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Orden" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaCreacion" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Usuarios_IdUsuario" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaUltimaModificacion" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="AltoFotoGrande" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="AnchoFotoGrande" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="AltoFotoPequeña" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="AnchoFotoPequeña" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="lst_ArticuloFindParameterPageIndex">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pageNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="filterFind" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idSeccion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="lst_ArticuloFindParameterPageIndexResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lst_ArticuloFindParameterPageIndexResult" type="tns:ArrayOfArticulos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArticulos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Articulos" nillable="true" type="tns:Articulos" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Articulos">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralProcess">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IdArticulo" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="Titulo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AnteTitulo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Autor" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ResumenCorto" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ResumenLargo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Contenido" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Usuarios_IdUsuario" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="Ediciones_IdEdicion" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="Secciones_IdSeccion" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="TiposArticulo_IdTipo" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="PlantillasDiagramacion_IdPlantilla" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="TiposGrafica_IdTipo" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="EstadosPublicacion_IdEstado" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaPublicacion" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="HoraPublicacion" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaArchivo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaCreacion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaUltimaModificacion" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="EstadoVisualizacion" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="EstadoCostoArticulo" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="ArticuloPrincipalEdicion" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="GeneraRSS" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="PalabraClave" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="TiposVinculo_IdTipo" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="TiposTarget_IdTipo" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="Texto" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TextoAlterno" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NombreImagen" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ContenidoLimpio" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="TotalPalabras" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="Galerias" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="Documentos" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="Multimedias" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="Vinculos" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="Relacionados" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="TotalEnPagina" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="PaginaNumero" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="Orden" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="TiposContenidoMultimedia_IdTipo" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="Maximo" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="Meta_Keywords" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Meta_Description" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Alianza_IdAlianza" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="Autor_Id" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="lstImagenes" type="tns:ArrayOfImagenes_Articulo" />
+              <s:element minOccurs="0" maxOccurs="1" name="LstArticulosRelacionados" type="tns:ArrayOfArticulos_Relacionados" />
+              <s:element minOccurs="0" maxOccurs="1" name="lstGalerias" type="tns:ArrayOfGalerias_Articulo" />
+              <s:element minOccurs="0" maxOccurs="1" name="lstMultimedia" type="tns:ArrayOfMultimedia_Articulo" />
+              <s:element minOccurs="0" maxOccurs="1" name="lstRecuadros" type="tns:ArrayOfArticulos_Relacionados" />
+              <s:element minOccurs="0" maxOccurs="1" name="LstForos" type="tns:ArrayOfForos_Articulo" />
+              <s:element minOccurs="0" maxOccurs="1" name="LstColumnistas" type="tns:ArrayOfArticulos_Relacionados" />
+              <s:element minOccurs="0" maxOccurs="1" name="LstDocumentos" type="tns:ArrayOfDocumento_Articulo" />
+              <s:element minOccurs="0" maxOccurs="1" name="ObjAlianza" type="tns:Alianza" />
+              <s:element minOccurs="0" maxOccurs="1" name="ObjAutor" type="tns:Autor" />
+              <s:element minOccurs="0" maxOccurs="1" name="LstSondeos" type="tns:ArrayOfSondeos" />
+              <s:element minOccurs="0" maxOccurs="1" name="UrlFriendly" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UrlFriendlyIngles" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DFechaPublicacion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImagenPequenia" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfImagenes_Articulo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Imagenes_Articulo" nillable="true" type="tns:Imagenes_Articulo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Imagenes_Articulo">
+        <s:attribute name="IdImagen" type="s:long" use="required" />
+        <s:attribute name="Orden" type="s:long" use="required" />
+        <s:attribute name="PiedeFoto" type="s:string" />
+        <s:attribute name="Autor" type="s:string" />
+        <s:attribute name="Nombre" type="s:string" />
+        <s:attribute name="AltoImagen" type="s:int" use="required" />
+        <s:attribute name="AnchoImagen" type="s:int" use="required" />
+        <s:attribute name="NombreImagen" type="s:string" />
+        <s:attribute name="IdTipoImagen" type="s:long" use="required" />
+      </s:complexType>
+      <s:complexType name="ArrayOfArticulos_Relacionados">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Articulos_Relacionados" nillable="true" type="tns:Articulos_Relacionados" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Articulos_Relacionados">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdArticulo" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Titulo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Orden" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnHome" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResumenCorto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Imagen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Autor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contenido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fecha" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfGalerias_Articulo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Galerias_Articulo" nillable="true" type="tns:Galerias_Articulo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Galerias_Articulo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdGaleria" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SeccionesGaleria_IdSeccion" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Imagen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Titulo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMultimedia_Articulo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Multimedia_Articulo" nillable="true" type="tns:Multimedia_Articulo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Multimedia_Articulo">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralProcess">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IdMultimedia" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SeccionesMultimedia_IdSeccion" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="TiposMultimedia_IdTipo" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="TiposContenidoMultimedia_IdTipo" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="FuenteResAlta" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Ancho" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="Alto" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImagenListado" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Titulo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfForos_Articulo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Foros_Articulo" nillable="true" type="tns:Foros_Articulo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Foros_Articulo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Foros_IdForo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Articulos_IdArticulo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Orden" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tema" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDocumento_Articulo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Documento_Articulo" nillable="true" type="tns:Documento_Articulo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Documento_Articulo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Alianza">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralProcess">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IdAlianza" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="NombreAlianza" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Foto" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Script" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Autor">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralProcess">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Nombres" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Apellidos" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UrlAutor" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfSondeos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Sondeos" nillable="true" type="tns:Sondeos" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Sondeos">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralProcess">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IdSondeo" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaCreacion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaUltimaModificacion" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Usuarios_IdUsuario" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="TiposGrafica_IdTipo" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="Pregunta" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IdRespuesta" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="Ediciones_IdEdicion" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="RespuestasSondeo" type="tns:ArrayOfRespuestasSondeo" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfRespuestasSondeo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RespuestasSondeo" nillable="true" type="tns:RespuestasSondeo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RespuestasSondeo">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralProcess">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IdRespuesta" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="Sondeos_IdSondeo" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="Respuesta" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Orden" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumeroVotos" type="s:double" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="lst_ArticuloFindAuthorPageIndex">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pageNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idAuthor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="lst_ArticuloFindAuthorPageIndexResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lst_ArticuloFindAuthorPageIndexResult" type="tns:ArrayOfArticulos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="lst_CaricaturasFindParameterPageIndex">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pageNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idSeccion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idEdicion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="lst_CaricaturasFindParameterPageIndexResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lst_CaricaturasFindParameterPageIndexResult" type="tns:ArrayOfArticulos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="lst_NotificacionUltimosCreados">
+        <s:complexType />
+      </s:element>
+      <s:element name="lst_NotificacionUltimosCreadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lst_NotificacionUltimosCreadosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfMultimedia" nillable="true" type="tns:ArrayOfMultimedia" />
+      <s:element name="ArrayOfGaleriaFotografica" nillable="true" type="tns:ArrayOfGaleriaFotografica" />
+      <s:element name="ArrayOfFotos_Galeria" nillable="true" type="tns:ArrayOfFotos_Galeria" />
+      <s:element name="ArrayOfArticulos" nillable="true" type="tns:ArrayOfArticulos" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="lst_MultimediasByParameterSoapIn">
+    <wsdl:part name="parameters" element="tns:lst_MultimediasByParameter" />
+  </wsdl:message>
+  <wsdl:message name="lst_MultimediasByParameterSoapOut">
+    <wsdl:part name="parameters" element="tns:lst_MultimediasByParameterResponse" />
+  </wsdl:message>
+  <wsdl:message name="lst_GaleriaFindParameterPageIndexSoapIn">
+    <wsdl:part name="parameters" element="tns:lst_GaleriaFindParameterPageIndex" />
+  </wsdl:message>
+  <wsdl:message name="lst_GaleriaFindParameterPageIndexSoapOut">
+    <wsdl:part name="parameters" element="tns:lst_GaleriaFindParameterPageIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="lst_GaleriaFindPhotosSoapIn">
+    <wsdl:part name="parameters" element="tns:lst_GaleriaFindPhotos" />
+  </wsdl:message>
+  <wsdl:message name="lst_GaleriaFindPhotosSoapOut">
+    <wsdl:part name="parameters" element="tns:lst_GaleriaFindPhotosResponse" />
+  </wsdl:message>
+  <wsdl:message name="lst_ArticuloFindParameterPageIndexSoapIn">
+    <wsdl:part name="parameters" element="tns:lst_ArticuloFindParameterPageIndex" />
+  </wsdl:message>
+  <wsdl:message name="lst_ArticuloFindParameterPageIndexSoapOut">
+    <wsdl:part name="parameters" element="tns:lst_ArticuloFindParameterPageIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="lst_ArticuloFindAuthorPageIndexSoapIn">
+    <wsdl:part name="parameters" element="tns:lst_ArticuloFindAuthorPageIndex" />
+  </wsdl:message>
+  <wsdl:message name="lst_ArticuloFindAuthorPageIndexSoapOut">
+    <wsdl:part name="parameters" element="tns:lst_ArticuloFindAuthorPageIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="lst_CaricaturasFindParameterPageIndexSoapIn">
+    <wsdl:part name="parameters" element="tns:lst_CaricaturasFindParameterPageIndex" />
+  </wsdl:message>
+  <wsdl:message name="lst_CaricaturasFindParameterPageIndexSoapOut">
+    <wsdl:part name="parameters" element="tns:lst_CaricaturasFindParameterPageIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="lst_NotificacionUltimosCreadosSoapIn">
+    <wsdl:part name="parameters" element="tns:lst_NotificacionUltimosCreados" />
+  </wsdl:message>
+  <wsdl:message name="lst_NotificacionUltimosCreadosSoapOut">
+    <wsdl:part name="parameters" element="tns:lst_NotificacionUltimosCreadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="lst_MultimediasByParameterHttpPostIn">
+    <wsdl:part name="pageNumber" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+    <wsdl:part name="filterFind" type="s:string" />
+    <wsdl:part name="idSeccion" type="s:string" />
+    <wsdl:part name="idTipoMultimedia" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="lst_MultimediasByParameterHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMultimedia" />
+  </wsdl:message>
+  <wsdl:message name="lst_GaleriaFindParameterPageIndexHttpPostIn">
+    <wsdl:part name="pageNumber" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+    <wsdl:part name="filterFind" type="s:string" />
+    <wsdl:part name="idSeccion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="lst_GaleriaFindParameterPageIndexHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfGaleriaFotografica" />
+  </wsdl:message>
+  <wsdl:message name="lst_GaleriaFindPhotosHttpPostIn">
+    <wsdl:part name="idGaleria" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="lst_GaleriaFindPhotosHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfFotos_Galeria" />
+  </wsdl:message>
+  <wsdl:message name="lst_ArticuloFindParameterPageIndexHttpPostIn">
+    <wsdl:part name="pageNumber" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+    <wsdl:part name="filterFind" type="s:string" />
+    <wsdl:part name="idSeccion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="lst_ArticuloFindParameterPageIndexHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfArticulos" />
+  </wsdl:message>
+  <wsdl:message name="lst_ArticuloFindAuthorPageIndexHttpPostIn">
+    <wsdl:part name="pageNumber" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+    <wsdl:part name="idAuthor" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="lst_ArticuloFindAuthorPageIndexHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfArticulos" />
+  </wsdl:message>
+  <wsdl:message name="lst_CaricaturasFindParameterPageIndexHttpPostIn">
+    <wsdl:part name="pageNumber" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+    <wsdl:part name="idSeccion" type="s:string" />
+    <wsdl:part name="idEdicion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="lst_CaricaturasFindParameterPageIndexHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfArticulos" />
+  </wsdl:message>
+  <wsdl:message name="lst_NotificacionUltimosCreadosHttpPostIn" />
+  <wsdl:message name="lst_NotificacionUltimosCreadosHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="ws_BusquedasSoap">
+    <wsdl:operation name="lst_MultimediasByParameter">
+      <wsdl:input message="tns:lst_MultimediasByParameterSoapIn" />
+      <wsdl:output message="tns:lst_MultimediasByParameterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="lst_GaleriaFindParameterPageIndex">
+      <wsdl:input message="tns:lst_GaleriaFindParameterPageIndexSoapIn" />
+      <wsdl:output message="tns:lst_GaleriaFindParameterPageIndexSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="lst_GaleriaFindPhotos">
+      <wsdl:input message="tns:lst_GaleriaFindPhotosSoapIn" />
+      <wsdl:output message="tns:lst_GaleriaFindPhotosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="lst_ArticuloFindParameterPageIndex">
+      <wsdl:input message="tns:lst_ArticuloFindParameterPageIndexSoapIn" />
+      <wsdl:output message="tns:lst_ArticuloFindParameterPageIndexSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="lst_ArticuloFindAuthorPageIndex">
+      <wsdl:input message="tns:lst_ArticuloFindAuthorPageIndexSoapIn" />
+      <wsdl:output message="tns:lst_ArticuloFindAuthorPageIndexSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="lst_CaricaturasFindParameterPageIndex">
+      <wsdl:input message="tns:lst_CaricaturasFindParameterPageIndexSoapIn" />
+      <wsdl:output message="tns:lst_CaricaturasFindParameterPageIndexSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="lst_NotificacionUltimosCreados">
+      <wsdl:input message="tns:lst_NotificacionUltimosCreadosSoapIn" />
+      <wsdl:output message="tns:lst_NotificacionUltimosCreadosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ws_BusquedasHttpPost">
+    <wsdl:operation name="lst_MultimediasByParameter">
+      <wsdl:input message="tns:lst_MultimediasByParameterHttpPostIn" />
+      <wsdl:output message="tns:lst_MultimediasByParameterHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="lst_GaleriaFindParameterPageIndex">
+      <wsdl:input message="tns:lst_GaleriaFindParameterPageIndexHttpPostIn" />
+      <wsdl:output message="tns:lst_GaleriaFindParameterPageIndexHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="lst_GaleriaFindPhotos">
+      <wsdl:input message="tns:lst_GaleriaFindPhotosHttpPostIn" />
+      <wsdl:output message="tns:lst_GaleriaFindPhotosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="lst_ArticuloFindParameterPageIndex">
+      <wsdl:input message="tns:lst_ArticuloFindParameterPageIndexHttpPostIn" />
+      <wsdl:output message="tns:lst_ArticuloFindParameterPageIndexHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="lst_ArticuloFindAuthorPageIndex">
+      <wsdl:input message="tns:lst_ArticuloFindAuthorPageIndexHttpPostIn" />
+      <wsdl:output message="tns:lst_ArticuloFindAuthorPageIndexHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="lst_CaricaturasFindParameterPageIndex">
+      <wsdl:input message="tns:lst_CaricaturasFindParameterPageIndexHttpPostIn" />
+      <wsdl:output message="tns:lst_CaricaturasFindParameterPageIndexHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="lst_NotificacionUltimosCreados">
+      <wsdl:input message="tns:lst_NotificacionUltimosCreadosHttpPostIn" />
+      <wsdl:output message="tns:lst_NotificacionUltimosCreadosHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ws_BusquedasSoap" type="tns:ws_BusquedasSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="lst_MultimediasByParameter">
+      <soap:operation soapAction="http://tempuri.org/lst_MultimediasByParameter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lst_GaleriaFindParameterPageIndex">
+      <soap:operation soapAction="http://tempuri.org/lst_GaleriaFindParameterPageIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lst_GaleriaFindPhotos">
+      <soap:operation soapAction="http://tempuri.org/lst_GaleriaFindPhotos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lst_ArticuloFindParameterPageIndex">
+      <soap:operation soapAction="http://tempuri.org/lst_ArticuloFindParameterPageIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lst_ArticuloFindAuthorPageIndex">
+      <soap:operation soapAction="http://tempuri.org/lst_ArticuloFindAuthorPageIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lst_CaricaturasFindParameterPageIndex">
+      <soap:operation soapAction="http://tempuri.org/lst_CaricaturasFindParameterPageIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lst_NotificacionUltimosCreados">
+      <soap:operation soapAction="http://tempuri.org/lst_NotificacionUltimosCreados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ws_BusquedasSoap12" type="tns:ws_BusquedasSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="lst_MultimediasByParameter">
+      <soap12:operation soapAction="http://tempuri.org/lst_MultimediasByParameter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lst_GaleriaFindParameterPageIndex">
+      <soap12:operation soapAction="http://tempuri.org/lst_GaleriaFindParameterPageIndex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lst_GaleriaFindPhotos">
+      <soap12:operation soapAction="http://tempuri.org/lst_GaleriaFindPhotos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lst_ArticuloFindParameterPageIndex">
+      <soap12:operation soapAction="http://tempuri.org/lst_ArticuloFindParameterPageIndex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lst_ArticuloFindAuthorPageIndex">
+      <soap12:operation soapAction="http://tempuri.org/lst_ArticuloFindAuthorPageIndex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lst_CaricaturasFindParameterPageIndex">
+      <soap12:operation soapAction="http://tempuri.org/lst_CaricaturasFindParameterPageIndex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lst_NotificacionUltimosCreados">
+      <soap12:operation soapAction="http://tempuri.org/lst_NotificacionUltimosCreados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ws_BusquedasHttpPost" type="tns:ws_BusquedasHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="lst_MultimediasByParameter">
+      <http:operation location="/lst_MultimediasByParameter" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lst_GaleriaFindParameterPageIndex">
+      <http:operation location="/lst_GaleriaFindParameterPageIndex" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lst_GaleriaFindPhotos">
+      <http:operation location="/lst_GaleriaFindPhotos" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lst_ArticuloFindParameterPageIndex">
+      <http:operation location="/lst_ArticuloFindParameterPageIndex" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lst_ArticuloFindAuthorPageIndex">
+      <http:operation location="/lst_ArticuloFindAuthorPageIndex" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lst_CaricaturasFindParameterPageIndex">
+      <http:operation location="/lst_CaricaturasFindParameterPageIndex" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lst_NotificacionUltimosCreados">
+      <http:operation location="/lst_NotificacionUltimosCreados" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ws_Busquedas">
+    <wsdl:port name="ws_BusquedasSoap" binding="tns:ws_BusquedasSoap">
+      <soap:address location="http://www.semana.com/ws/ws_Busquedas.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ws_BusquedasSoap12" binding="tns:ws_BusquedasSoap12">
+      <soap12:address location="http://www.semana.com/ws/ws_Busquedas.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ws_BusquedasHttpPost" binding="tns:ws_BusquedasHttpPost">
+      <http:address location="http://www.semana.com/ws/ws_Busquedas.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

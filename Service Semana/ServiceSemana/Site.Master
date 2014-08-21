@@ -1,0 +1,122 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ServiceSemana.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/jquery-1.4.1-vsdoc.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-1.8.2.js" type="text/javascript"></script>
+    <script src="Scripts/jquery.colorbox-min.js" type="text/javascript"></script>
+    <link href="Styles/colorbox.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
+    <link href="Styles/jquery-ui/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" type="text/css" />
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //setInterval(mostrarNoticia(), 240000);
+        });
+
+        function mostrarNoticia() {
+            $.ajax({
+                type: "POST",
+                url: "Default.aspx/LastNews",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var items = response.d;
+                    var items2 = items
+                    alert(items2.length);
+                    alert(items);
+                    alert(items[0].Id);
+                    if (items.length > 0) {
+                        idsActuales = '';
+                        for (i = items.length - 1; i >= 0; i--) {
+                            mostrar = true;
+                            //Pintar item si no esta registrado en la cookie
+                            if (mostrar) {
+                                //Verificar imagen pequenia
+                                if (items[i].Imagen != 'undefined' || items[i].Imagen != null) {
+                                    if (items[i].AnteTitulo == 'Artículo')
+                                        Imagen = '<img src="' + items[i].Imagen + '" width="75px" border="0" />';
+                                    else if (items[i].AnteTitulo == 'Galería')
+                                        Imagen = '<img src="photos/' + items[i].Imagen + '" width="75px" border="0" />';
+                                    else
+                                        Imagen = '<img src="http://images.semana.com/multimedia/md_' + items[i].IdArticulo + '/' + items[i].Imagen + '" width="75px" border="0" />';
+                                }
+                                else
+                                    Imagen = '';
+                                //Actualizar fecha
+                                fecha = items[i].FechaPublicacion
+                                //Pintar html notificaciones    
+                                var notice = '<div class="notice">'
+										  + '<div class="notice-body">'
+											  + Imagen
+											  + '<h3><a href="' + items[i].Url + '" style="color: #000; text-decoration: none; font-family:Georgia,Times New Roman,Times,serif;">' + items[i].Titulo + '</a></h3>'
+											  + '<h3 style="text-align:center;"><a href="' + items[i].Url + '" style="color: #C80202; font-size:13px; text-decoration: none; font-family:Arial,Helvetica,sans-serif;">Ver ' + items[i].AnteTitulo + '</a></h3>'
+										+ '</div>'
+										+ '<div class="notice-bottom"></div>'
+									+ '</div>';
+
+
+                            }
+
+                            //Mostrar notificación
+                            $("#UltimasNoticias").html(notice);
+                        }
+                    }
+                },
+                error: function (result) {
+                    alert('ERROR ' + result.status + ' ' + result.statusText);
+                }
+            });
+        }
+
+        </script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+            <%--    <h1>
+                    Images
+                </h1>--%>
+            <div id="UltimasNoticias">
+            </div>
+            </div>
+            <div class="loginDisplay">
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
+                    IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/ConsultaCategoria.aspx" Text="Noticias" />
+                        <asp:MenuItem NavigateUrl="~/Votes.aspx" Text="Votador Ilegal"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/GaleriaFotografica.aspx" Text="Galeria Fotografica"/>
+                        <asp:MenuItem NavigateUrl="~/ConsultaImages.aspx" Text="Caricaturas"/>
+                        <asp:MenuItem NavigateUrl="~/Multimedia.aspx" Text="Multimedia" />
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Consulta" Value="Consulta" />
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="Acerca de" />
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+    </div>
+    </form>
+</body>
+</html>
